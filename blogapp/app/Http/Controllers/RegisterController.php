@@ -29,10 +29,9 @@ class RegisterController extends Controller
             
         ]);
 
-        if($response->getStatusCode() ==201){
+        if($response->getStatusCode() == 201){
             return redirect('/blog')->with('success', 'Your account has been created.');
         }
-
 
     }
 }

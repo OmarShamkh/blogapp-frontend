@@ -13,16 +13,10 @@
     </style>
 
 
-    <h2>Register</h2>
+    <h2>Login</h2>
 
-    <form method="POST" action="/register">
+    <form method="POST" action="/login">
         @csrf
-
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" name="email">
-        </div>
-
 
         <div class="form-group">
             <label for="username">UserName:</label>
@@ -36,13 +30,14 @@
         </div>
 
         <div class="form-group">
-            <button style="cursor:pointer" type="submit" class="btn btn-primary">Register</button>
+            <button style="cursor:pointer" type="submit" class="btn btn-primary">Login</button>
         </div>
 
     </form>
-
     <div>
-        <p> Already signed up yet? <a href="/login"> Login </a></p>
+
+        <p>Haven't signed up yet? <a href="/register"> register </a></p>
+        
     </div>
 
 

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\PostController;
 use \App\Http\Controllers\RegisterController;
+use \App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,9 @@ Route::get('/blog/{post:id}', [PostController::class, 'details']);
 
 Route::get('/register', [RegisterController::class, 'register']);
 Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('/login', [LoginController::class, 'create']);
+Route::post('/login', [LoginController::class, 'store']);
+
+Route::get('/logout', [LoginController::class, 'logout']);
+

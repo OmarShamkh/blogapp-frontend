@@ -8,11 +8,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">        
-                    <li class="nav-item text-black">
-                        <a class="nav-link text-black font-weight-bold" href="/register">Register/Login</a>
-                    </li>
                 <li class="nav-item text-black">
-                    <a class="nav-link text-black font-weight-bold" href="#">Logout</a>
+                    <a class="nav-link text-black font-weight-bold" href="/register">Register/Login</a>
+                </li>
+                <li class="nav-item text-black">
+                    <a class="nav-link text-black font-weight-bold" href="/logout">Logout</a>
                 </li>
             </ul>
         </div>
