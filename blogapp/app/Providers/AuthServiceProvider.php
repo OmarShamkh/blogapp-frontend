@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
+use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use App\Providers\CustomUserProvider;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -21,6 +23,17 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @return void
      */
+
+    // public function boot(GateContract $gate)
+    // {
+    //     $this->registerPolicies($gate);
+    
+    //     // The code below sets up the 'api' driver
+    //     $this->app['auth']->extend('api', function() {
+    //         return new \App\Auth\ApiUserProvider();
+    //     });
+    // }
+
     public function boot()
     {
         $this->registerPolicies();

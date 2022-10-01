@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-use GuzzleHttp\Client;
 
+use GuzzleHttp\Client;
 
 class LoginController extends Controller
 {
     //
+    
     public function create()
     {
         return view('login');
@@ -16,38 +17,37 @@ class LoginController extends Controller
     {
         
         $username = request()->username;
-        $password = request()->password;
-        // dd($email , $username , $password);
+        $password = request()->password;    
 
-        $url = 'http://127.0.0.1:8000/user/login/';
+
+        $login_api = 'http://127.0.0.1:8000/user/login/';
 
         $client = new Client();
-        $response = $client->request('POST', $url, [
-            'form_params' => [
+        
+        $response = $client->request('POST', $login_api, [
+            'form_params' => [ 
                 'username' => $username,
                 'password' => $password
             ]
-            
         ]);
 
-        if($response->getStatusCode() == 202){
+        $status_code = $response->getStatusCode();
+        $response = (string) $response->getBody();
+        $response =json_decode($response);
 
-            return redirect('/blog')->with('success', 'Welcome Back!');
+        $auth_token = ($response->token);
+        // dd($auth_token);
+        // dd($response->getBody()->getContents());
+
+        // // store username in sessions 
+        session(['username' => $username , 'auth_token' => $auth_token]);
+        // dd(request()->session());   
+
+        if($status_code == 200){
+            
+            return redirect('/blog');
         }
     }
 
-    public function logout()
-    {
-        $url = 'http://127.0.0.1:8000/user/logout/';
-
-        $client = new Client();
-        $response = $client->request('GET', $url, [
-
-        ]);
-        
-        dd($response);
-
-        return redirect('/blog')->with('success', 'Goodbye!');
-        
-    }
+    
 }

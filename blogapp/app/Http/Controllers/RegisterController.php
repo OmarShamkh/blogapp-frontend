@@ -12,15 +12,20 @@ class RegisterController extends Controller
     }
 
     public function store(){
+
         $email = request()->email;
         $username = request()->username;
         $password = request()->password;
         // dd($email , $username , $password);
 
-        $url = 'http://127.0.0.1:8000/user/signup/';
+        $register_api = 'http://127.0.0.1:8000/user/signup/';
 
-        $client = new Client();
-        $response = $client->request('POST', $url, [
+        $client = new Client([
+            'cookies' => true
+        ]);
+
+        $response = $client->request('POST', $register_api, [
+
             'form_params' => [
                 'email' => $email,
                 'username' => $username,
@@ -29,8 +34,11 @@ class RegisterController extends Controller
             
         ]);
 
+        session(['username' => $username]);
+        
         if($response->getStatusCode() == 201){
-            return redirect('/blog')->with('success', 'Your account has been created.');
+            
+            return redirect('/blog');
         }
 
     }
