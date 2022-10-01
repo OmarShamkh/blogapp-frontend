@@ -29,8 +29,11 @@
   <div>
     {{-- Only Authenticated users can add comments --}}
     @if (session()->has('username'))
+
     @include('addcomment')
+
     @else
+    
     <p>Please <a href="/login"> Login </a> or <a href="/register"> Create </a> an account to add comments.</p>
     @endif
 
