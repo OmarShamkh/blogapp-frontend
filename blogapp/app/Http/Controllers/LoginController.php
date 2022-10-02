@@ -17,8 +17,7 @@ class LoginController extends Controller
     {
         
         $username = request()->username;
-        $password = request()->password;    
-
+        $password = request()->password;   
 
         $login_api = 'http://127.0.0.1:8000/user/login/';
 
@@ -36,10 +35,10 @@ class LoginController extends Controller
         $response =json_decode($response);
 
         $auth_token = ($response->token);
-        // dd($auth_token);
-        // dd($response->getBody()->getContents());
+        
+        session()->regenerate();
 
-        // // store username in sessions 
+        //store sessions 
         session(['username' => $username , 'auth_token' => $auth_token]);
         // dd(request()->session());   
 

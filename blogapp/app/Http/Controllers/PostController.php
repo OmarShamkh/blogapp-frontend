@@ -47,4 +47,5 @@ class PostController extends Controller
             'username' => $username
         ]);
     }
+    
 }

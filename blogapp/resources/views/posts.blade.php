@@ -24,7 +24,6 @@
 
 <div class="container">
     <div class="row">
-        <!-- Blog Entries Column -->
         <div class="col-md-8 mt-3 left">
 
             @foreach ($posts as $post)

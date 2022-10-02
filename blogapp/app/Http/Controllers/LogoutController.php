@@ -27,6 +27,7 @@ class LogoutController extends Controller
 
         if(request()->session()->all()['username'] != ""){
             request()->session()->pull('username');
+            request()->session()->pull('auth_token');
         };    
         
         return redirect('/blog');

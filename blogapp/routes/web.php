@@ -22,15 +22,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// view posts list
+// show posts list
 Route::get('/blog', [PostController::class, 'list']);
 
-// view detail of a post
+// show detail of a post
 Route::get('/blog/{post:id}', [PostController::class, 'details']);
 
-// add new comment if authenticated
+// add new comment to a post if authenticated
 Route::post('/blog/{post:id}', [CommentController::class, 'create']);
-
 
 // show commnet form 
 Route::get('/comments/edit/{comment:id}', [CommentController::class, 'edit_form']);
