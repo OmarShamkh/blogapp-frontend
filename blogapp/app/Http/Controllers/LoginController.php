@@ -19,10 +19,11 @@ class LoginController extends Controller
         $username = request()->username;
         $password = request()->password;   
 
-        $login_api = 'http://127.0.0.1:8000/user/login/';
+        $login_api =  env('BACKEND_URL') .'/user/login/';
 
         $client = new Client();
-        
+             
+
         $response = $client->request('POST', $login_api, [
             'form_params' => [ 
                 'username' => $username,
@@ -36,16 +37,18 @@ class LoginController extends Controller
 
         $auth_token = ($response->token);
         
-        session()->regenerate();
-
-        //store sessions 
-        session(['username' => $username , 'auth_token' => $auth_token]);
-        // dd(request()->session());   
-
         if($status_code == 200){
-            
+
+            session()->regenerate();
+            //store sessions 
+            session(['username' => $username , 'auth_token' => $auth_token]);
+
             return redirect('/blog');
         }
+        else{
+            abort(400 , message:"Access denied: wrong username or password.");
+        }
+        
     }
 
     

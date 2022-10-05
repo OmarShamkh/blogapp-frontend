@@ -8,7 +8,8 @@ class PostController extends Controller
     //
     public function list(){
 
-        $posts_api = 'http://127.0.0.1:8000/blog/posts/';
+        $posts_api = env('BACKEND_URL') .'/blog/posts/';
+        // env
 
         if(request()->session()->exists('username')){
             $username = request()->session()->all()['username'];
@@ -29,7 +30,7 @@ class PostController extends Controller
 
     public function details($id){
 
-        $url = 'http://127.0.0.1:8000/blog/posts/' . $id;
+        $url =  env('BACKEND_URL'). '/blog/posts/' . $id;
 
         if(request()->session()->exists('username')){
             $username = request()->session()->all()['username'];
