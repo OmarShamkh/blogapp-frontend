@@ -12,7 +12,7 @@ class LogoutController extends Controller
     public function destroy()
     {
         
-        $logout_api = 'http://127.0.0.1:8000/user/logout/';
+        $logout_api =  env('BACKEND_URL') . '/user/logout/';
 
         $client = new Client([
             'cookies' => true

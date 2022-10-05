@@ -18,7 +18,7 @@ class RegisterController extends Controller
         $password = request()->password;
         // dd($email , $username , $password);
 
-        $register_api = 'http://127.0.0.1:8000/user/signup/';
+        $register_api =  env('BACKEND_URL') .'/user/signup/';
 
         $client = new Client([
             'cookies' => true

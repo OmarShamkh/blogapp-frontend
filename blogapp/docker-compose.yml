@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  blog-frontend:
+    container_name: shamkh_blog_front
+    build: .
+    ports:
+      - target : 8001
+        published : 8001
+
+networks:
+  default:
+    name: shamkh_blog_newtwork
+    
+
