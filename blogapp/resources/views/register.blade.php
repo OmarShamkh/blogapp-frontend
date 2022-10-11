@@ -25,7 +25,7 @@
 
     <div class="form-group">
         <label for="username">UserName:</label>
-        <input type="text" class="form-control" id="username" name="username" required>
+        <input type="text" class="form-control" id="username" name="username"  required>
     </div>
 
 
@@ -39,6 +39,14 @@
     </div>
 
 </form>
+
+@if (\Session::has('error'))
+
+    <div class="alert alert-danger">
+        {{\Session::get('error')}}
+    </div>
+
+@endif
 
 <div>
     <p> Already have an account? <a href="/login"> Login </a></p>

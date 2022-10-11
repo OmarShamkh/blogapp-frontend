@@ -21,7 +21,7 @@
                 @else
 
                 <li class="nav-item text-black">
-                    <a class="nav-link text-black font-weight-bold" href="/login">Register/Login</a>
+                    <a class="nav-link text-black font-weight-bold" href="/register">Register/Login</a>
                 </li>
 
                 @endif
