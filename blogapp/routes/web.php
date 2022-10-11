@@ -32,13 +32,13 @@ Route::get('/blog/{post:id}', [PostController::class, 'details']);
 Route::post('/blog/{post:id}', [CommentController::class, 'create']);
 
 // show commnet form 
-Route::get('/comments/edit/{comment:id}', [CommentController::class, 'edit_form']);
+Route::get('/comments/edit/{post:id}/{comment:id}', [CommentController::class, 'edit_form']);
 
 // update comment
-Route::post('/comments/edit/{comment:id}', [CommentController::class, 'edit']);
+Route::post('/comments/edit/{post:id}/{comment:id}', [CommentController::class, 'edit']);
 
 // delete comment
-Route::get('/comments/delete/{comment:id}', [CommentController::class, 'delete']);
+Route::get('/comments/delete/{post:id}/{comment:id}', [CommentController::class, 'delete']);
 
 // show register form
 Route::get('/register', [RegisterController::class, 'register']);

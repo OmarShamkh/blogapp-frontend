@@ -48,8 +48,8 @@
 
         @if ($username == $comment->user_name )
 
-        <a href="/comments/edit/{{$comment->id}}" class="card-link">edit comment</a>
-        <a href="/comments/delete/{{$comment->id}}" class="card-link">delete comment</a>
+        <a href="/comments/edit/{{$post->id}}/{{$comment->id}}" class="card-link">edit comment</a>
+        <a href="/comments/delete/{{$post->id}}/{{$comment->id}}" class="card-link">delete comment</a>
 
         @endif
 

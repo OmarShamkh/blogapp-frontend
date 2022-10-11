@@ -13,6 +13,11 @@
 
 
 <h2>Login</h2>
+@if (\Session::has('message'))
+    <div>
+        <p class="card-text">Registered Successfull, Please login!</p>
+    </div>
+@endif
 
 <form method="POST" action="/login">
     @csrf

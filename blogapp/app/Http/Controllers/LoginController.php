@@ -36,13 +36,10 @@ class LoginController extends Controller
         $response =json_decode($response);
 
         $auth_token = ($response->token);
+        //store sessions 
+        session(['username' => $username , 'auth_token' => $auth_token]);
         
         if($status_code == 200){
-
-            session()->regenerate();
-            //store sessions 
-            session(['username' => $username , 'auth_token' => $auth_token]);
-
             return redirect('/blog');
         }
         else{
