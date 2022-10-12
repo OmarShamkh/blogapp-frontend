@@ -32,9 +32,10 @@ Route::get('/blog/{post:id}', [PostController::class, 'details']);
 Route::post('/blog/{post:id}', [CommentController::class, 'create']);
 
 // show commnet form 
-Route::get('/comments/edit/{post:id}/{comment:id}', [CommentController::class, 'edit_form']);
+// Route::get('/comments/edit/{post:id}/{comment:id}', [CommentController::class, 'edit_form']);
 
 // update comment
+Route::get('/comments/edit/{post:id}/{comment:id}', [CommentController::class, 'get_comment']);
 Route::post('/comments/edit/{post:id}/{comment:id}', [CommentController::class, 'edit']);
 
 // delete comment

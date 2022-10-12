@@ -47,7 +47,7 @@
         <p class="card-text">{{ $comment->content }}</p>
 
         @if ($username == $comment->user_name )
-
+        {{-- <a href="/comments/{{$comment->id}}" class="card-link">edit comment</a> --}}
         <a href="/comments/edit/{{$post->id}}/{{$comment->id}}" class="card-link">edit comment</a>
         <a href="/comments/delete/{{$post->id}}/{{$comment->id}}" class="card-link">delete comment</a>
 
