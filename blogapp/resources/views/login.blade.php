@@ -13,6 +13,13 @@
 
 
 <h2>Login</h2>
+@if (\Session::has('message'))
+    <div>
+        <p class="card-text">Registered Successfull, Please login!</p>
+    </div>
+@endif
+
+
 
 <form method="POST" action="/login">
     @csrf
@@ -33,6 +40,12 @@
     </div>
 
 </form>
+
+@if (\Session::has('error'))
+    <div>
+        <p class="card-text" style="color: red;">Access Denied, Wrong usernamr Or password!</p>
+    </div>
+@endif
 <div>
 
     <p>Haven't signed up yet? <a href="/register"> register </a></p>

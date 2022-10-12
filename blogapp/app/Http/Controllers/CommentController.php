@@ -29,7 +29,7 @@ class CommentController extends Controller
         return redirect('blog/' . $id);
     }
 
-    public function edit($comment_id)
+    public function edit($post_id,$comment_id)
     {
         $api =  env('BACKEND_URL') .'/blog/comments/' . $comment_id;
 
@@ -48,7 +48,7 @@ class CommentController extends Controller
         ]);
 
         // dd($response);
-        return redirect('blog/');
+        return redirect('blog/' .$post_id);
     }
 
     public function edit_form($comment_id)
@@ -58,7 +58,7 @@ class CommentController extends Controller
     }
 
 
-    public function delete($comment_id)
+    public function delete($post_id, $comment_id)
     {
         $api =  env('BACKEND_URL') .'/blog/comments/' . $comment_id;
 
@@ -74,6 +74,6 @@ class CommentController extends Controller
         ]);
 
         // dd($response);
-        return redirect('blog/');
+        return redirect('blog/'.$post_id);
     }
 }

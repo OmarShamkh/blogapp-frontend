@@ -33,12 +33,9 @@ class RegisterController extends Controller
             ]
             
         ]);
-
-        session(['username' => $username]);
         
         if($response->getStatusCode() == 201){
-            
-            return redirect('/blog');
+            return redirect('/login')->with('message' , 'Registered Successful, Please login!');
         }
 
     }
