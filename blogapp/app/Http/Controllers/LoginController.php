@@ -40,9 +40,9 @@ class LoginController extends Controller
                 return redirect('/blog');
             }
         }
-        
+
         catch (ClientException $e) {
-            return redirect('/login')->with('error' , 'Access Denied, Wrong usernamr Or password!!');
+            return redirect('/login')->with('error' , 'message');
         }
     }     
         

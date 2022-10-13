@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
+use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Client;
 
 class RegisterController extends Controller
@@ -24,18 +26,31 @@ class RegisterController extends Controller
             'cookies' => true
         ]);
 
-        $response = $client->request('POST', $register_api, [
+        try{
+            $response = $client->request('POST', $register_api, [
 
-            'form_params' => [
-                'email' => $email,
-                'username' => $username,
-                'password' => $password
-            ]
-            
-        ]);
-        
-        if($response->getStatusCode() == 201){
-            return redirect('/login')->with('message' , 'Registered Successful, Please login!');
+                'form_params' => [
+                    'email' => $email,
+                    'username' => $username,
+                    'password' => $password
+                ]
+                
+            ]);
+
+            return redirect('/login')->with('success' , 'message');
+        }
+
+        catch (ClientException $e) {
+            $response = $e->getResponse();
+            $res = json_decode($response->getBody()->getContents());
+            // dd($res);
+            try{
+                $error_message = $res->error[0];
+            }
+            catch(Exception){
+                $error_message = $res->password[0];
+            }
+            return redirect('register')->with('error' , $error_message);
         }
 
     }

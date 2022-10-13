@@ -19,7 +19,7 @@
 
     <div class="form-group">
         <label for="comment">Comment:</label>
-        <textarea class="form-control" name="content" required></textarea>
+        <textarea class="form-control" name="content" required>{{$comment}}</textarea>
     </div>
 
     <div class="form-group">
