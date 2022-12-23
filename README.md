@@ -22,11 +22,21 @@ Home page is showing list of all posts.
 **You have to run backend apis before** from this repo :
  https://github.com/OmarShamkh/blogapp-rest-apis.git 
 
-1- Clone repo 
+1- 
+```
+git clone https://github.com/OmarShamkh/blogapp-frontend.it
+```
 
-2- docker compose up
+2- 
+ ```
+ cd blogapp-frontend/
+ ```
+ 3-
+  ```
+ docker compose up
+ ```
 
-3- open : http://localhost:8001/blog
+Now open : http://localhost:8001/blog
 ************************************************************
 ### Demo:
 
