@@ -24,7 +24,7 @@ Home page is showing list of all posts.
 
 1- 
 ```
-git clone https://github.com/OmarShamkh/blogapp-frontend.it
+git clone https://github.com/OmarShamkh/blogapp-frontend.git
 ```
 
 2- 
