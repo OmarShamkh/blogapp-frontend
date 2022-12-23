@@ -26,6 +26,7 @@ Home page is showing list of all posts.
 
 2- docker compose up
 
+3- open : http://localhost:8001/blog
 ************************************************************
 ### Demo:
 
