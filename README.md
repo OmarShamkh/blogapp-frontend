@@ -29,7 +29,7 @@ git clone https://github.com/OmarShamkh/blogapp-frontend.git
 
 2- 
  ```
- cd blogapp-frontend/
+ cd blogapp-frontend/blogapp
  ```
  3-
   ```
