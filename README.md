@@ -26,4 +26,8 @@ Home page is showing list of all posts.
 
 2- docker compose up
 
-### Thats all!
+************************************************************
+### Demo:
+
+[My_Blog.webm](https://user-images.githubusercontent.com/44472968/209352803-47a12613-409b-4472-8ee5-00aa43e7714b.webm)
+
