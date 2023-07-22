@@ -27,6 +27,7 @@ This is a personal blog app that allows users to view, comment, and create blog 
 **You have to run backend apis before** from this repo :
  https://github.com/OmarShamkh/blogapp-rest-apis.git 
 
+- Creat new env variable in ".env.example" file : "BACKEND_URL = http://blog-backend:8000" , then rename file to ".env".
 ```
 git clone https://github.com/OmarShamkh/blogapp-frontend.git
 ```
