@@ -2,8 +2,8 @@ version: '3.7'
 
 services:
   blog-frontend:
-    container_name: shamkh_blog_front
-    image: shamkh/shamkh_blog:frontend
+    container_name: blog-front
+    build: .
     ports:
       - target : 8001
         published : 8001
