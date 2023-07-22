@@ -25,7 +25,7 @@ class CommentController extends Controller
         $comment =json_decode($response);
         // dd($comment);
 
-        return view('editcomment', ['comment_id' => $comment_id , 'comment' => $comment]);
+        return view('editcomment', ['comment_id' => $comment_id , 'comment' => $comment->content]);
     }
 
     public function create($id)

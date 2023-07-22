@@ -1,8 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow" id="mainNav">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/blog">My Blog</a>
+<nav class="navbar navbar-expand-md navbar-light bg-light shadow" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="/blog">
+            <img src="/img/logo.png" alt="ShamkhX">
+        </a>
 
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -12,16 +14,33 @@
             <ul class="navbar-nav ml-auto">
 
                 @if ($username != "")
-                <li class="nav-item text-black">
-                    <p class="text-black font-weight-bold pt-2 pr-1">{{$username}} </p>
+                <li class="nav-item">
+                    <a class="nav-link text-dark font-weight-bold" href="/profile">
+                        <span class="text-primary">{{ $username }}</span>
+                    </a>
                 </li>
-                <li class="nav-item text-black">
-                    <a class="nav-link text-black font-weight-bold" href="/logout">Logout</a>
+                <li class="nav-item">
+                    <a class="nav-link text-dark font-weight-bold" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark font-weight-bold" href="/contact">Contact</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link text-dark font-weight-bold" href="/logout">Logout</a>
                 </li>
                 @else
 
-                <li class="nav-item text-black">
-                    <a class="nav-link text-black font-weight-bold" href="/register">Register/Login</a>
+                <li class="nav-item">
+                    <a class="nav-link text-dark font-weight-bold" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark font-weight-bold" href="/contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark font-weight-bold" href="/register">
+                        <span class="text-primary">Register/Login</span>
+                    </a>
                 </li>
 
                 @endif
