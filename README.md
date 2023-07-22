@@ -6,20 +6,21 @@ This is a personal blog app that allows users to view, comment, and create blog 
 ## Features
 
 * **Homepage:** The homepage displays a list of all blog posts. Non-authenticated users can view all blog posts and comments.
+![Screenshot from 2023-07-22 19-07-19](https://github.com/OmarShamkh/blogapp-frontend/assets/44472968/7d8dab2c-96d5-4c81-89dd-4242319a1b60)
 
-![209350249-5671bfa1-8a9c-447b-a169-5dbc515cefe4](https://github.com/OmarShamkh/blogapp-frontend/assets/44472968/7702134d-63ab-4be7-9558-682293df5a13)
 
 
 * **Commenting:** Only authenticated users can add, update, and delete comments.
 
   
-  ![post](https://user-images.githubusercontent.com/44472968/209350595-b7f5877c-e25f-4ff7-aca0-9c07d0b9c90c.png)
+![Screenshot from 2023-07-22 19-07-48](https://github.com/OmarShamkh/blogapp-frontend/assets/44472968/051120da-d656-4d25-948a-15539de30208)
 
   
 
 * **User registration and login:** Users can register and login to the application.
 
-  ![user-comment](https://user-images.githubusercontent.com/44472968/209350839-281ff54b-4cc3-49ae-8bc8-d2e47eb22d13.png)
+
+![Screenshot from 2023-07-22 19-09-15](https://github.com/OmarShamkh/blogapp-frontend/assets/44472968/aa0e7b51-cc18-4c04-b3e1-967bd7ee2c3a)
 
 
 ## Running the application
@@ -42,6 +43,5 @@ Create a new env variable in ".env.example" file: "BACKEND_URL = http://blog-bac
 
 The application will be running at http://localhost:8001/blog.
 
-## Demo
-[My_Blog.webm](https://user-images.githubusercontent.com/44472968/209352803-47a12613-409b-4472-8ee5-00aa43e7714b.webm)
+**Thats all!**
 
