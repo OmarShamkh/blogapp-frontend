@@ -58,3 +58,17 @@ Route::post('/login', [LoginController::class, 'store']);
 // logout user
 Route::get('/logout', [LogoutController::class, 'destroy']);
 
+// admin dashboard view
+Route::get('/admin', function () {
+    return view('admin_dashboard');
+});
+
+// add a blog post
+Route::post('/admin/add', [PostController::class, 'add']);
+
+// edit a blog post
+Route::post('/admin/edit', [PostController::class, 'edit']);
+
+// delete a blog post
+Route::post('/admin/delete', [PostController::class, 'delete']);
+
