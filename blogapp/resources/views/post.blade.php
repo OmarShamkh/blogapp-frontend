@@ -14,7 +14,7 @@
 
         <h1>{{ $post->title }} </h1>
 
-        <p class="text-muted">Admin | {{$post->published_date}} </p>
+        <p class="text-muted">Admin | {{\Carbon\Carbon::parse($post->published_date)->diffForHumans()}} </p>
 
         <p class="card-text ">{{ $post->content }}</p>
 
@@ -30,7 +30,7 @@
     {{-- Only Authenticated users can add comments --}}
     @if (session()->has('username'))
 
-    @include('addcomment')
+     @include('addcomment')
 
     @else
     
@@ -40,23 +40,21 @@
     @foreach ($post->comments as $comment)
     <div class="card mb-1" style="max-width:750px;">
 
-      <div class="card-body">
+       <div class="card-body">
 
-        <h5 class="card-title">{{ $comment->user_name }}</h5>
-
+        <h2 class="card-title">{{ $comment->user_name }}</h2> 
+        <p class="card-date"> {{ \Carbon\Carbon::parse($comment->published_date)->diffForHumans() }}  </p>
         <p class="card-text">{{ $comment->content }}</p>
 
         @if ($username == $comment->user_name )
-        {{-- <a href="/comments/{{$comment->id}}" class="card-link">edit comment</a> --}}
-        <a href="/comments/edit/{{$post->id}}/{{$comment->id}}" class="card-link">edit comment</a>
-        <a href="/comments/delete/{{$post->id}}/{{$comment->id}}" class="card-link">delete comment</a>
-
+        <a class="btn-mt-2" href="/comments/edit/{{$post->id}}/{{$comment->id}}" class="card-link">edit comment</a>
+        <a class="btn-mt-2" href="/comments/delete/{{$post->id}}/{{$comment->id}}" class="card-link">delete comment</a>
         @endif
 
       </div>
+      
     </div>
     @endforeach
-
   </div>
 
 </div>

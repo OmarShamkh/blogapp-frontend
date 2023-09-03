@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\PostController;
 use \App\Http\Controllers\CommentController;
@@ -22,6 +23,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/about', [AboutController::class, 'index']);
 // show posts list
 Route::get('/blog', [PostController::class, 'list']);
 

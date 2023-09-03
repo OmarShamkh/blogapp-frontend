@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light shadow" id="mainNav">
     <div class="container">
         <a class="navbar-brand" href="/blog">
-            <img src="/img/logo.png" alt="ShamkhX">
+            <p> ShamkhX </p>
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -22,9 +22,9 @@
                 <li class="nav-item">
                     <a class="nav-link text-dark font-weight-bold" href="/about">About</a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link text-dark font-weight-bold" href="/contact">Contact</a>
-                </li>
+                </li> --}}
                 
                 <li class="nav-item">
                     <a class="nav-link text-dark font-weight-bold" href="/logout">Logout</a>
@@ -34,9 +34,9 @@
                 <li class="nav-item">
                     <a class="nav-link text-dark font-weight-bold" href="/about">About</a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link text-dark font-weight-bold" href="/contact">Contact</a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link text-dark font-weight-bold" href="/register">
                         <span class="text-primary">Register/Login</span>
